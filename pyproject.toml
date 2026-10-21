@@ -8,7 +8,7 @@ dependencies = [
 ]
 
 [project.scripts]
-select-schema = "pydantic_select_schema:main"
+pydantic-select-schema = "pydantic_select_schema:main"
 
 [build-system]
 requires = ["uv_build>=0.11.3,<0.12.0"]

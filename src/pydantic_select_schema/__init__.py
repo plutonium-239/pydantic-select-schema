@@ -1,6 +1,6 @@
 """The select schema of a pydantic model: what model_dump emits, not what validation accepts.
 
-Usage: select-schema dotted.module:Model
+Usage: pydantic-select-schema dotted.module:Model
 
 JSON Schema's `required` is a validation concept (the key must appear in the
 input), so model_json_schema(mode="serialization") still leaves defaulted
