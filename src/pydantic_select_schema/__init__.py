@@ -21,6 +21,8 @@ from __future__ import annotations
 import argparse
 import importlib
 import json
+import os
+import sys
 
 from pydantic import BaseModel
 from pydantic.json_schema import GenerateJsonSchema
@@ -48,6 +50,7 @@ def main() -> None:
     module_path, sep, class_name = parser.parse_args().model.rpartition(":")
     if not sep or not module_path or not class_name:
         parser.error("model must be dotted.module:ClassName")
+    sys.path.insert(0, os.getcwd())
     model = getattr(importlib.import_module(module_path), class_name)
     print(json.dumps(select_schema(model), indent=2))
 
